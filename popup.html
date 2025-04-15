@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rejection Email Finder</title>
+    <title>Email Highlighter</title>
     <style>
       body {
         font-family: sans-serif;
         padding: 10px;
-        width: 220px;
+        width: 250px;
       }
-      input {
+      input,
+      select,
+      button {
         width: 100%;
-        margin-bottom: 10px;
-        padding: 5px;
+        margin: 5px 0;
+        padding: 6px;
       }
       #count {
-        font-size: 1.5rem;
-        color: red;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
       }
     </style>
   </head>
@@ -23,12 +25,16 @@
     <h3>Rejection Emails</h3>
     <p>Detected: <span id="count">0</span></p>
 
-    <label for="keywords">Search words:</label>
+    <label for="profileSelect">Keyword Profile:</label>
+    <select id="profileSelect"></select>
+
+    <label for="keywords">Keywords (comma-separated):</label>
     <input
       type="text"
-      id="keywords"
-      placeholder="e.g. unfortunately, thanks for applying" />
-    <button id="save">Save</button>
+      id="keywords" />
+
+    <button id="save">Save to Profile</button>
+    <button id="newProfile">+ New Profile</button>
 
     <script src="popup.js"></script>
   </body>
